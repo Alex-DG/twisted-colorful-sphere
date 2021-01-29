@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 import { OrbitControls } from '@react-three/drei'
 
-import useDatGui from '@/hooks/useDatGUI'
+import useDatGui from '@/hooks/useDatGui'
 
 import useStore from '@/helpers/store'
 import { vertexShader, fragmentShader } from '@/helpers/shaders'
