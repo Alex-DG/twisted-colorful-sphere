@@ -29,4 +29,11 @@
 
     border: solid 1px #000;
   }
+
+  .error {
+    color: salmon;
+  }
+  .m-5 {
+    margin: 5px;
+  }
 }
