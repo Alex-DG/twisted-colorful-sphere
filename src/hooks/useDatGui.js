@@ -4,14 +4,20 @@ const useDatGui = (settings) => {
   let gui
 
   useEffect(() => {
-    const datGui = document.getElementsByClassName('dg main')
-    if (datGui?.length === 0) {
+    const datGuiClass = document.getElementsByClassName('dg main')
+
+    if (datGuiClass?.length === 0) {
       const dat = require('dat.gui')
       gui = new dat.GUI()
 
-      gui.add(settings, 'speed', 0.1, 1, 0.01)
-      gui.add(settings, 'density', 0, 10, 0.01)
-      gui.add(settings, 'strength', 0, 2, 0.01)
+      const folder1 = gui.addFolder('Noise')
+      const folder2 = gui.addFolder('Rotation')
+
+      folder1.add(settings, 'speed', 0.1, 1, 0.01)
+      folder1.add(settings, 'density', 0, 10, 0.01)
+      folder1.add(settings, 'strength', 0, 2, 0.01)
+      folder2.add(settings, 'frequency', 0, 10, 0.1)
+      folder2.add(settings, 'amplitude', 0, 10, 0.1)
     }
   }, [])
 }
