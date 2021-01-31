@@ -124,9 +124,6 @@ const rotation = `
   }
 `
 
-/**
- * Manipulates the attributes of vertices
- */
 export const vertexShader = `
   varying float vDistort;
 
@@ -155,9 +152,6 @@ export const vertexShader = `
   }
 `
 
-/**
- * Takes care of how the pixels between the vertices look
- */
 export const fragmentShader = `
   varying float vDistort;
 

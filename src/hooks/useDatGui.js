@@ -1,7 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const useDatGui = (settings) => {
   let gui
+
+  const [options, set] = useState({
+    wireframe: false,
+  })
 
   useEffect(() => {
     const datGuiClass = document.getElementsByClassName('dg main')
@@ -13,7 +17,7 @@ const useDatGui = (settings) => {
       const folder1 = gui.addFolder('Noise')
       const folder2 = gui.addFolder('Rotation')
       const folder3 = gui.addFolder('Color')
-      const folder4 = gui.addFolder('Others')
+      const folder4 = gui.addFolder('Other')
 
       folder1.add(settings, 'speed', 0.1, 1, 0.01)
       folder1.add(settings, 'density', 0, 10, 0.01)
@@ -24,9 +28,13 @@ const useDatGui = (settings) => {
 
       folder3.add(settings, 'intensity', 0, 10, 0.1)
 
-      // folder4.add(settings, 'wireframe', false) TODO
+      const onClick = (value) => set({ ...options, wireframe: value })
+
+      folder4.add(settings, 'wireframe').name('wireframe').onChange(onClick)
     }
   }, [])
+
+  return options
 }
 
 export default useDatGui
