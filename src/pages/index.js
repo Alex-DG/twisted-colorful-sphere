@@ -75,8 +75,23 @@ const Page = () => {
     )
   }
 
+  const Dom = () => {
+    return (
+      <h1 className='m-5 color-salmon'>
+        <a
+          href='https://github.com/Alex-DG/twisted-colorful-sphere'
+          target='_blank'
+          rel='noopener'
+        >
+          🍜 🍣 🍙
+        </a>
+      </h1>
+    )
+  }
+
   return (
     <>
+      <Dom />
       <Scene />
     </>
   )
