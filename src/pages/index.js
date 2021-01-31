@@ -69,7 +69,7 @@ const Page = () => {
           position: [0, 0, 3],
         }}
       >
-        <Icosahedron />
+        <Icosahedron position={[0, 0, 0]} />
         <OrbitControls />
       </Canvas>
     )
